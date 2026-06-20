@@ -99,7 +99,7 @@ nav.navbar h1 {
 .tech-cards .tech-point {
   background: #f8f9fa;
   border: 1px solid rgba(33, 37, 41, 0.08);
-  border-radius: 0.75rem;
+  border-radius: 0,1rem;
   padding: 0.9rem 1rem;
   font-size: 0.95rem;
   color: #343a40;

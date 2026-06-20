@@ -1,99 +1,96 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const cards = Array.from(
-        document.querySelectorAll("#technology-cards-row > .col-sm-6"),
+  const cards = Array.from(
+    document.querySelectorAll("#technology-cards-row > .col-sm-6"),
+  );
+  const paginationContainer = document.getElementById("technology-pagination");
+  const modalElement = document.getElementById("techDescriptionModal");
+  const modalTitle = modalElement?.querySelector(".modal-title");
+  const modalBody = modalElement?.querySelector(".modal-body");
+  const cardsPerPage = 6;
+  let currentPage = 1;
+
+  if (
+    !cards.length ||
+    !paginationContainer ||
+    !modalElement ||
+    !modalTitle ||
+    !modalBody
+  ) {
+    return;
+  }
+
+  const descriptionModal = new bootstrap.Modal(modalElement);
+  const totalPages = Math.ceil(cards.length / cardsPerPage);
+
+  function createModalButton(card) {
+    const cardBody = card.querySelector(".card-body");
+    const descriptionParagraph = cardBody?.querySelector(
+      "p.text-muted.small.mb-0",
     );
-    const paginationContainer = document.getElementById(
-        "technology-pagination",
-    );
-    const modalElement = document.getElementById("techDescriptionModal");
-    const modalTitle = modalElement?.querySelector(".modal-title");
-    const modalBody = modalElement?.querySelector(".modal-body");
-    const cardsPerPage = 6;
-    let currentPage = 1;
-
-    if (
-        !cards.length ||
-        !paginationContainer ||
-        !modalElement ||
-        !modalTitle ||
-        !modalBody
-    ) {
-        return;
+    if (!cardBody || !descriptionParagraph) {
+      return;
     }
 
-    const descriptionModal = new bootstrap.Modal(modalElement);
-    const totalPages = Math.ceil(cards.length / cardsPerPage);
+    descriptionParagraph.classList.add("d-none");
 
-    function createModalButton(card) {
-        const cardBody = card.querySelector(".card-body");
-        const descriptionParagraph = cardBody?.querySelector(
-            "p.text-muted.small.mb-0",
-        );
-        if (!cardBody || !descriptionParagraph) {
-            return;
-        }
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn-sm btn-outline-dark mt-3 align-self-start";
+    button.textContent = "Ver descripción";
+    button.addEventListener("click", function () {
+      const title =
+        cardBody.querySelector("h5")?.textContent.trim() || "Descripción";
+      modalTitle.textContent = title;
+      modalBody.textContent = descriptionParagraph.textContent.trim();
+      descriptionModal.show();
+    });
 
-        descriptionParagraph.classList.add("d-none");
+    cardBody.insertBefore(button, descriptionParagraph);
+  }
 
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "btn btn-sm btn-outline-dark mt-3 align-self-start";
-        button.textContent = "Ver descripción";
-        button.addEventListener("click", function () {
-            const title =
-                cardBody.querySelector("h5")?.textContent.trim() ||
-                "Descripción";
-            modalTitle.textContent = title;
-            modalBody.textContent = descriptionParagraph.textContent.trim();
-            descriptionModal.show();
-        });
+  function initializeCards() {
+    cards.forEach(createModalButton);
+  }
 
-        cardBody.insertBefore(button, descriptionParagraph);
-    }
+  function showPage(page) {
+    currentPage = Math.min(Math.max(page, 1), totalPages);
 
-    function initializeCards() {
-        cards.forEach(createModalButton);
-    }
+    const start = (currentPage - 1) * cardsPerPage;
+    const end = currentPage * cardsPerPage;
 
-    function showPage(page) {
-        currentPage = Math.min(Math.max(page, 1), totalPages);
+    cards.forEach((card, index) => {
+      card.style.display = index >= start && index < end ? "" : "none";
+    });
 
-        const start = (currentPage - 1) * cardsPerPage;
-        const end = currentPage * cardsPerPage;
+    renderPagination();
+  }
 
-        cards.forEach((card, index) => {
-            card.style.display = index >= start && index < end ? "" : "none";
-        });
+  function renderPagination() {
+    paginationContainer.innerHTML = "";
 
-        renderPagination();
-    }
+    const prevButton = document.createElement("button");
+    prevButton.type = "button";
+    prevButton.className = "btn btn-outline-primary btn-sm";
+    prevButton.textContent = "Anterior";
+    prevButton.disabled = currentPage === 1;
+    prevButton.addEventListener("click", () => showPage(currentPage - 1));
 
-    function renderPagination() {
-        paginationContainer.innerHTML = "";
+    const nextButton = document.createElement("button");
+    nextButton.type = "button";
+    nextButton.className = "btn btn-outline-primary btn-sm";
+    nextButton.textContent = "Siguiente";
+    nextButton.disabled = currentPage === totalPages;
+    nextButton.addEventListener("click", () => showPage(currentPage + 1));
 
-        const prevButton = document.createElement("button");
-        prevButton.type = "button";
-        prevButton.className = "btn btn-outline-primary btn-sm";
-        prevButton.textContent = "Anterior";
-        prevButton.disabled = currentPage === 1;
-        prevButton.addEventListener("click", () => showPage(currentPage - 1));
+    const pageInfo = document.createElement("span");
+    pageInfo.className = "text-muted small";
+    pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
 
-        const nextButton = document.createElement("button");
-        nextButton.type = "button";
-        nextButton.className = "btn btn-outline-primary btn-sm";
-        nextButton.textContent = "Siguiente";
-        nextButton.disabled = currentPage === totalPages;
-        nextButton.addEventListener("click", () => showPage(currentPage + 1));
+    paginationContainer.appendChild(prevButton);
+    paginationContainer.appendChild(pageInfo);
+    paginationContainer.appendChild(nextButton);
+  }
 
-        const pageInfo = document.createElement("span");
-        pageInfo.className = "text-muted small";
-        pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
-
-        paginationContainer.appendChild(prevButton);
-        paginationContainer.appendChild(pageInfo);
-        paginationContainer.appendChild(nextButton);
-    }
-
-    initializeCards();
-    showPage(1);
+  initializeCards();
+  showPage(1);
 });

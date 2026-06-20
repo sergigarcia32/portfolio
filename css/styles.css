@@ -1,0 +1,179 @@
+@media (max-width: 576px) {
+    nav.navbar .navbar-brand,
+    nav.navbar h1,
+    nav.navbar span {
+        display: none !important;
+    }
+    .tech-cards .col-md-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    .tech-cards .btn {
+        display: block !important;
+        width: 100% !important;
+    }
+    .horizontal-card.modern {
+        border-left: none;
+        padding-left: 0.5rem;
+    }
+    .horizontal-card__logo {
+        width: 100%;
+        height: 140px;
+    }
+    .horizontal-card__img-left {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 768px) {
+    .horizontal-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .horizontal-card__img {
+        width: 100%;
+        height: 160px;
+        border-radius: 0.5rem;
+    }
+    .horizontal-card__content {
+        margin-left: 0 !important;
+        margin-top: 0.5rem;
+    }
+}
+.card-feature {
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+.card-feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 1.25rem 2rem rgba(0, 0, 0, 0.18);
+}
+nav.navbar {
+    background: linear-gradient(
+        90deg,
+        rgba(13, 110, 253, 0.95),
+        rgba(102, 16, 242, 0.95),
+        rgba(102, 16, 242, 0.95),
+        rgba(102, 16, 242, 0.95)
+    );
+    color: #fff;
+}
+nav.navbar .navbar-brand,
+nav.navbar h1 {
+    color: #fff !important;
+}
+
+/* Styles for the tech cards section */
+.tech-cards .card-body h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    color: #212529;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+.tech-cards .card-body p {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+.tech-cards .card-body ul {
+    padding-left: 0;
+    margin-bottom: 1.1rem;
+}
+.tech-cards .tech-list {
+    display: grid;
+    gap: 0.75rem;
+}
+.tech-cards .tech-point {
+    background: #f8f9fa;
+    border: 1px solid rgba(33, 37, 41, 0.08);
+    border-radius: 0.75rem;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+    color: #343a40;
+    line-height: 1.5;
+}
+.tech-cards .tech-point:hover {
+    background: #e9ecef;
+}
+.feature {
+    width: 4rem;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e9ecef;
+    margin-bottom: 1rem;
+}
+.feature i {
+    color: #212529;
+}
+.tech-cards .card {
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+    border-radius: 1rem;
+}
+.tech-cards .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1.25rem 2rem rgba(0, 0, 0, 0.18);
+}
+
+/* Horizontal experience cards styles */
+.horizontal-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.06);
+}
+.horizontal-card__img {
+    width: 140px;
+    height: 90px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+}
+.horizontal-card__content h3 {
+    margin-bottom: 0.25rem;
+}
+.horizontal-card__content p {
+    margin-bottom: 0;
+    color: #6c757d;
+}
+
+/* Modern experience card additions */
+.horizontal-card.modern {
+    border-left: 4px solid rgba(111, 66, 193, 0.95);
+    padding-left: 1rem;
+}
+
+.horizontal-card__logo {
+    width: 84px;
+    height: 84px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.06);
+}
+.horizontal-card__img-left {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.06);
+}
+.horizontal-card .badge {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.5rem;
+}

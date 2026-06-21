@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Portfolio | Sergi García</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav
+      class="navbar bg-body-tertiary py-3 border-1 border-bottom border-secondary shadow"
+    >
+      <div
+        class="d-flex align-items-center justify-content-between flex-row mx-5 w-100"
+      >
+        <div class="d-flex align-items-center gap-3">
+          <img
+            class="rounded-circle bg-dark"
+            src="assets/img/CV-FOTO.jpeg"
+            alt="Profile Image"
+            width="70"
+            height="70"
+          />
+          <div
+            class="d-flex flex-column align-items-start justify-content-center"
+          >
+            <h1 class="fs-5 fw-bold text-center">Sergi García Jiménez</h1>
+            <span>Software Engineer</span>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white"
+            style="font-size: 2rem"
+          >
+            <i class="bi bi-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-white"
+            style="font-size: 2rem"
+          >
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="bg-light py-3">
+      <div class="container px-lg-5 mt-2">
+        <a
+          href="index.html"
+          class="btn btn-dark rounded-pill d-inline-flex align-items-center text-white gap-2"
+        >
+          <i class="bi bi-arrow-left"></i>
+          Volver al inicio
+        </a>
+      </div>
+      <!-- Experience horizontal cards -->
+      <section class="experience-cards py-5 bg-light">
+        <div class="container px-lg-5">
+          <h2 class="fs-4 fw-bold mb-4 text-center">
+            Beneficios de aplicar SOLID
+          </h2>
+          <div class="d-flex flex-column gap-3">
+            <div
+              class="horizontal-card modern d-flex align-items-center p-3 bg-white shadow-sm rounded"
+            >
+              <div class="horizontal-card__content ms-3 w-100">
+                <div
+                  class="d-flex flex-column justify-content-between align-items-start"
+                >
+                  <h3 class="h5 mb-1 text-uppercase fw-bold mb-2">
+                    SRP (Single Responsibility Principle)
+                  </h3>
+                  <span class="badge bg-primary p-2 mb-3"
+                    >Escalabilidad en equipos</span
+                  >
+                </div>
+                <div class="d-flex flex-column gap-3">
+                  <div class="card mb-3 w-70">
+                    <div class="row g-0">
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            Principio de Responsabilidad Única
+                          </h5>
+                          <p
+                            class="card-text border-3 border-start border-gray ps-3"
+                          >
+                            Cuando se trabaja en aplicaciones de gran tamaño y
+                            se planea incorporar muchas nuevas funcionalidades,
+                            una solución habitual es pensar en ampliar el equipo
+                            de desarrollo. Sin embargo, antes de añadir más
+                            personas, es importante plantearse una pregunta:
+                            ¿Está realmente preparado el proyecto para
+                            incorporar nuevos desarrolladores de forma
+                            eficiente? En mi experiencia, hay dos principios de
+                            diseño de software que resultan fundamentales para
+                            escalar equipos con éxito: <br /><br />1- Alta
+                            cohesión: cada componente debe tener una
+                            responsabilidad clara y bien definida (Principio de
+                            Responsabilidad Única - SRP de SOLID).
+                            <br /><br />2- Bajo acoplamiento: los distintos
+                            módulos deben depender lo menos posible entre sí,
+                            facilitando que los cambios en una parte no afecten
+                            al resto. <br /><br />
+                            ¿Por qué es importante? Porque cuando una aplicación
+                            está bien estructurada, varios desarrolladores
+                            pueden trabajar en paralelo sin generar bloqueos
+                            constantes, conflictos o dependencias innecesarias.
+                            Escalar un equipo no consiste únicamente en
+                            contratar más desarrolladores. También implica
+                            construir una arquitectura que permita que esos
+                            desarrolladores aporten valor desde el primer día.
+                          </p>
+                          <!--<a
+                                                    href=""
+                                                    class="btn btn-dark btn-sm mt-3"
+                                                    >Ver detalles</a
+                                                >-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="horizontal-card modern d-flex align-items-center p-3 bg-white shadow-sm rounded"
+            >
+              <div class="horizontal-card__content ms-3 w-100">
+                <div
+                  class="d-flex flex-column justify-content-between align-items-start"
+                >
+                  <h3 class="h5 mb-1 text-uppercase fw-bold mb-2">
+                    OCP (Open/Closed Principle)
+                  </h3>
+                  <span class="badge bg-primary p-2 mb-2"
+                    >Escalabilidad en Algoritmos</span
+                  >
+                </div>
+                <div class="d-flex flex-column gap-3">
+                  <div class="card mb-3 w-70">
+                    <div class="row g-0">
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            Principio de Abierto Cerrado
+                          </h5>
+                          <p
+                            class="card-text border-3 border-start border-gray ps-3"
+                          >
+                            Las máquinas suelen hacer exactamente lo que les
+                            decimos.
+                            <br />
+                            El problema es que quienes nos equivocamos somos las
+                            personas. En desarrollo de software, una gran parte
+                            de los errores no aparecen porque la tecnología
+                            falle, sino porque necesitamos modificar código
+                            existente para añadir nuevas funcionalidades,
+                            corregir comportamientos o adaptarnos a cambios del
+                            negocio. <br />
+                            <br />
+                            Aquí es donde cobra importancia la "O" de SOLID: el
+                            Open/Closed Principle (OCP). Este principio nos dice
+                            que un componente de software debe estar abierto a
+                            la extensión, pero cerrado a la modificación. <br />
+                            <br />¿Y qué significa esto en la práctica? Que
+                            deberíamos poder añadir nuevas funcionalidades sin
+                            tener que alterar código que ya funciona y que ha
+                            sido probado previamente. Cada vez que modificamos
+                            una pieza existente, existe el riesgo de introducir
+                            nuevos errores. En cambio, cuando diseñamos sistemas
+                            pensando en la extensión, reducimos ese riesgo y
+                            aumentamos la estabilidad de la aplicación. No se
+                            trata de evitar cambios. Se trata de diseñar
+                            software que pueda evolucionar sin poner en peligro
+                            lo que ya está funcionando. La calidad del software
+                            no depende únicamente de que hoy funcione, sino de
+                            que mañana pueda seguir creciendo de forma segura.
+                          </p>
+                          <!--<a
+                                                    href=""
+                                                    class="btn btn-dark btn-sm mt-3"
+                                                    >Ver detalles</a
+                                                >-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer-->
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+        <p class="mb-0">
+          © 2026 Sergi García Jiménez. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

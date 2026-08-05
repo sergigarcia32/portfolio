@@ -109,15 +109,16 @@ nav.navbar h1 {
   background: #e9ecef;
 }
 .feature {
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: #e9ecef;
-  margin-bottom: 1rem;
+  transform: translateY(-25%);
 }
 .feature i {
+  width: 3rem;
   color: #212529;
 }
 .tech-cards .card {

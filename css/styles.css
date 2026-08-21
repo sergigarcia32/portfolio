@@ -1,4 +1,10 @@
 @media (max-width: 576px) {
+  nav.navbar .dropdown-toggle {
+    font-size: 0;
+  }
+  nav.navbar .dropdown-toggle .bi-list {
+    font-size: 1.5rem;
+  }
   nav.navbar .navbar-brand,
   nav.navbar h1,
   nav.navbar span {
@@ -42,7 +48,7 @@
     margin-top: 0.5rem;
   }
 }
-.card-feature,
+
 .card-project {
   cursor: pointer;
   transition:
@@ -101,7 +107,7 @@ nav.navbar h1 {
 .tech-cards .tech-point {
   background: #f8f9fa;
   border: 1px solid rgba(33, 37, 41, 0.08);
-  border-radius: 0,1rem;
+  border-radius: 0, 1rem;
   padding: 0.9rem 1rem;
   font-size: 0.95rem;
   color: #343a40;
